@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-about" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "data-category",
+          name: "data-category",
+          fieldset: {
+            legend: {
+              text: "How is your data categorised?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all categories that apply about the data."
+          },
+          items: [
+            {
+              value: "physicalInfrastructure",
+              text: "Physical infrastructure"
+            },
+            {
+              value: "socialInfrastructure",
+              text: "Social infrastructure"
+            },
+            {
+              value: "demographics",
+              text: "Demographcs"
+            },
+            {
+              value: "utilities",
+              text: "Utilities"
+            },
+            {
+              value: "floodRisk",
+              text: "Flood risk"
+            },
+            {
+              value: "sustainability",
+              text: "Sustainability"
+            },
+            {
+              value: "transportConnectivity",
+              text: "Transport and connectivity"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-category" method="post">
+
+        <h1 class="govuk-heading-l">
+          Time period and update of the data
+        </h1>
+
+        <h2 class="govuk-heading-m">
+          What time period does the dataset cover?
+        </h2>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="data-period-start-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                Start date
+              </h3>
+            </legend>
+            <div id="data-period-start-date-hint" class="govuk-hint">
+                For example, 19 3 1980
+              </div>
+            <div class="govuk-date-input" id="data-period-start-date">
+              <div class="govuk-date-input" id="data-period-end-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-start-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data-period-start-date-day" name="data-period-start-date-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-start-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data-period-start-date-month" name="data-period-start-date-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-start-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="data-period-start-date-year" name="data-period-start-date-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="data-period-end-date-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                End date (optional)
+              </h3>
+            </legend>
+            <div id="data-period-end-date-hint" class="govuk-hint">
+                Leave this blank if the dataset is still being updated
+              </div>
+            <div class="govuk-date-input" id="data-period-end-date">
+              <div class="govuk-date-input" id="data-period-end-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-end-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data-period-end-date-day" name="data-period-end-date-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-end-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data-period-end-date-month" name="data-period-end-date-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="data-period-end-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="data-period-end-date-year" name="data-period-end-date-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                How often is the dataset updated?
+              </h2>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency" name="data-update-frequency" type="radio" value="upload-manual">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency">
+                  Live
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-2" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-2">
+                  Daily
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-3" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-3">
+                  Weekly
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-4" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-4">
+                  Monthly
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-5" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-5">
+                  Quarterly
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-6" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-6">
+                  Yearly
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="data-update-frequency-7" name="data-update-frequency" type="radio" value="upload-link">
+                <label class="govuk-label govuk-radios__label" for="data-update-frequency-7">
+                  The dataset will not be regularly updated
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

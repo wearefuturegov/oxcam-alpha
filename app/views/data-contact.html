@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-" method="post">
+
+        <h1 class="govuk-heading-l">
+          Contact details
+        </h1>
+
+        <p>
+          If you would like people to get in contact with you about your dataset, please provide the contact details of the team who can respond to questions.
+        </p>
+
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-location">
+              Contact email address (optional)
+            </label>
+          </h1>
+          <input class="govuk-input" id="data-location" name="data-location" type="text">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

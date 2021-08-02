@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-files" method="post">
+
+        <h1 class="govuk-heading-l">
+         About your data
+        </h1>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="more-detail">
+              Summary (optional)
+            </label>
+          </h2>
+          <div id="more-detail-hint" class="govuk-hint">
+            Explain what it covers, how it can be used and any other important information that a person using your dataset might find helpful.
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="more-detail">
+              Reason for commissioning data (optional)
+            </label>
+          </h2>
+          <div id="more-detail-hint" class="govuk-hint">
+            Why was the data created? Was it for an evidence base study, local plan, strategy or something else?
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+              URL to original source
+            </label>
+          </h2>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+              Licence (optional)
+            </label>
+          </h2>
+          <div id="more-detail-hint" class="govuk-hint">
+            Select the license that is needed to access your dataset.
+          </div>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">What goes in here?</option>
+            <option value="updated">should it be a radio option?</option>
+            <option value="views">option 3</option>
+            <option value="comments">option 4</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+              Who will be able to access your data?
+            </label>
+          </h2>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">Is this a select input?</option>
+            <option value="updated">should it be a typeahead search interaction from a data list of registered users?</option>
+            <option value="views">option 3</option>
+            <option value="comments">option 4</option>
+          </select>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

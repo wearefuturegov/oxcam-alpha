@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-published" method="post">
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              Data has been published
+            </h3>
+            <p class="govuk-body">You can <a class="govuk-notification-banner__link" href="#">edit the dataset</a> if you think there's a problem.</p>
+          </div>
+        </div>
+
+        <h1 class="govuk-heading-l">
+          Heading of dataset (where does this come from?)
+        </h1>
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">[Output test] Form data captured</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Label</th>
+                <th scope="col" class="govuk-table__header">Data</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% for label, data in data %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">{{ label }}</th>
+                <td class="govuk-table__cell">{% if data %}{{ data }}{% else %}Data not entered{% endif %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+    </div>
+  </div>
+
+{% endblock %}

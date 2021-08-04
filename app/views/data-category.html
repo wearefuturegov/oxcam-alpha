@@ -30,40 +30,7 @@
           hint: {
             text: "Select all categories that apply about the data."
           },
-          items: [
-            {
-              value: "physicalInfrastructure",
-              text: "Physical infrastructure"
-            },
-            {
-              value: "socialInfrastructure",
-              text: "Social infrastructure"
-            },
-            {
-              value: "demographics",
-              text: "Demographcs"
-            },
-            {
-              value: "utilities",
-              text: "Utilities"
-            },
-            {
-              value: "floodRisk",
-              text: "Flood risk"
-            },
-            {
-              value: "sustainability",
-              text: "Sustainability"
-            },
-            {
-              value: "transportConnectivity",
-              text: "Transport and connectivity"
-            },
-            {
-              value: "other",
-              text: "Other"
-            }
-          ]
+          items: data['data-categories']
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

@@ -19,6 +19,51 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
+  'data-categories': [
+    {
+      value: 'physicalInfrastructure',
+      text: 'Physical infrastructure'
+    },
+    {
+      value: 'socialInfrastructure',
+      text: 'Social infrastructure'
+    },
+    {
+      value: 'demographics',
+      text: 'Demographcs'
+    },
+    {
+      value: 'utilities',
+      text: 'Utilities'
+    },
+    {
+      value: 'floodRisk',
+      text: 'Flood risk'
+    },
+    {
+      value: 'sustainability',
+      text: 'Sustainability'
+    },
+    {
+      value: 'transportConnectivity',
+      text: 'Transport and connectivity'
+    },
+    {
+      value: 'other',
+      text: 'Other'
+    }
+  ],
+
+  'dummy-data': [
+    {
+      name: 'Open spaces across Buckinghamshire',
+      location: 'Buckinghamshire',
+      'organisation-type': 'Local Authority',
+      'organisation-name': 'Buckinghamshire',
+      'entry-date': '12/10/2020',
+      type: 'Open space'
+    }
+
+  ]
 
 }

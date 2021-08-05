@@ -56,10 +56,10 @@ module.exports = {
 
   'dummy-data': [
     {
-      name: 'Open spaces across Buckinghamshire',
-      location: 'Buckinghamshire',
+      name: 'Open spaces across Milton Keynes',
+      location: 'Milton Keynes',
       'organisation-type': 'Local Authority',
-      'organisation-name': 'Buckinghamshire',
+      'organisation-name': 'Milton Keynes',
       'entry-date': '12/10/2020',
       type: 'Open space'
     }

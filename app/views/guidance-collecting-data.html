@@ -31,22 +31,36 @@
     <div class="govuk-grid-column-one-third">
       <h1 class="govuk-heading-l">Open Space</h1>
 
-      <ul class="govuk-list">
+      <ul class="govuk-list govuk-list--spaced">
         <span class="govuk-caption-m govuk-!-margin-bottom-2">Sections</span>
         <li>
-          <a class="govuk-link govuk-link--no-underline" href="./guidance-introduction">Introduction</a>
+          <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="./guidance-introduction">Introduction</a>
         </li>
         <li>
-          <a class="govuk-link govuk-link--no-underline" href="./guidance-policy">Consider guidance and policy</a>
+          <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="./guidance-policy">Consider guidance and policy</a>
         </li>
         <li style="border-left: 4px solid #1d70b8; margin-left: -14px; padding-left: 10px;">
-          <a class="govuk-link govuk-link--no-underline" href="./guidance-collecting-data">Data to collect</a>
+          <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state govuk-!-font-weight-bold" href="./guidance-collecting-data">Data to collect</a>
+          <ul class="govuk-list govuk-!-font-size-16 govuk-list--spaced govuk-!-padding-left-2">
+            <li>
+              <span>—</span>
+              <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#how-data-should-be-collected">How data should be collected</a>
+            </li>
+            <li>
+              <span>—</span>
+              <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#current-population-and-supply">Current population and supply</a>
+            </li>
+            <li>
+              <span>—</span>
+              <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#future-supply-and-demand">Future supply and demand</a>
+            </li>
+          </ul>
         </li>
         <li>
-          <a class="govuk-link govuk-link--no-underline" href="./guidance-publishing">Publishing data</a>
+          <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="./guidance-publishing">Publishing data</a>
         </li>
       </ul>
-      </div>
+    </div>
 
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-xl">Guidance</span>
@@ -68,351 +82,360 @@
         <li>benchmarks, in some instances can be specified: these are not targets but often averages against which local divergences can be explained and used to guide policy.</li>
       </ul>
 
-      <h2 class="govuk-heading-l">How data should be collected</h2>
+      <section id="how-data-should-be-collected">
+        <h2 class="govuk-heading-l">How data should be collected</h2>
 
-      <p>[What data should be collected?]</p>
+        <p>[What data should be collected?]</p>
 
-      <h3 class="govuk-heading-m">
-        Metadata
-      </h3>
+        <h3 class="govuk-heading-m">
+          Metadata
+        </h3>
 
-      <p>[Is this relevant without the repo?]</p>
+        <p>[Is this relevant without the repo?]</p>
 
-      <p class="govuk-body">
-        Metadata is information about the data that helps others to better understand the data. Metadata you should provide about your open space data:
-      </p>
+        <p class="govuk-body">
+          Metadata is information about the data that helps others to better understand the data. Metadata you should provide about your open space data:
+        </p>
+
+        <h3 class="govuk-heading-m">
+          Data format
+        </h3>
+        <p class="govuk-body">
+          Data should be collected in a CSV file, which should include:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a header row which must be the first row in the spreadsheet, written exactly as below (headers are case sensitive with no spacing)</li>
+          <li>1 row for each open space site</li>
+        </ul>
+
+        <p>
+          We've created an <a href="/public/downloads/open-spaces.csv">open spaces data CSV template</a>.
+          If it helps, you can use this example file and enter your own data,
+          following the guidelines below.
+        </p>
+
+        <h4 class="govuk-heading-s">
+          Column headers:
+        </h4>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          OrganisationURI
+        </h5>
+        <p>
+          <a href="https://digital-land.github.io/organisation/" target="_blank">Find your organisation in this list</a> and enter the corresponding Open Data Communities URI.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Typology
+        </h5>
+        <p>
+          Enter the type of open space that the site belongs to.
+        </p>
+        <p>This should be one of the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Parks and gardens</li>
+          <li>Natural/Seminatural</li>
+          <li>Outdoor sports facilities</li>
+          <li>Amenity</li>
+          <li>Children and young people</li>
+          <li>Allotments, gardens and farms</li>
+          <li>Churchyards and cemeteries</li>
+          <li>Civic spaces</li>
+        </ul>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Reference
+        </h5>
+        <p>
+          Enter the unique reference your organisation uses to identify the open space.
+        </p>
+
+        <p>
+          If one doesn’t exist, you need to create one. It should not be used by your organisation to identify any other sites, but can be borrowed from another data set listing the site.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Name
+        </h5>
+        <p>
+          Enter the name your organisation uses for the site.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          GeoY
+        </h5>
+        <p>
+        Enter the latitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate systems specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          GeoX
+        </h5>
+        <p>
+        Enter the longitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate system specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
+        </p>
+
+        <div class="govuk-inset-text">
+          Be sure you do not mix up the latitude (Geo Y) and longitude (Geo X) values. Any location in the UK will have a latitude (Geo Y) from about 49 to 57 and a longitude (Geo X) from about -7 to 2.
+        </div>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Hectares
+        </h5>
+        <p>
+          Enter the land area of the site in hectares, up to 2 decimal places. Use digits (2) rather than words (two).
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          OwnershipStatus
+        </h5>
+        <p>
+          Indicate the site’s ownership by entering one of the following values:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>owned by a public authority</li>
+          <li>not owned by a public authority</li>
+          <li>mixed ownership</li>
+        </ul>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          FirstAddedDate
+        </h5>
+        <p>
+          Enter the date that the site was first added to this register, in the format YYYY-MM-DD.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          LastUpdatedDate
+        </h5>
+        <p>
+          Enter the date this entry in the register was updated, in the format YYYY-MM-DD.
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          EndDate
+        </h5>
+        <p>
+          If the site no longer needs to be listed (for example, if the site has
+          been built on), it should remain on the register for historical reasons
+          and not be deleted. Enter the date the site was developed or determined
+          to no longer be an open space, in the format YYYY-MM-DD. This field should
+          only be filled in once the site is no longer classified as open space.
+        </p>
+      </section>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <section id="current-population-and-supply">
+
+        <h2 class="govuk-heading-l">Current population and supply</h2>
+
+        <h3 class="govuk-heading-m">Population</h3>
+        <p>
+          Current population figures, using the ONS population figures for the planning authorities boundary should be used as a baseline. Population should be segmented by age demographics to allow for analysis of availability of more age-specific facilities such as children’s playgrounds.
+        </p>
+
+        <h3 class="govuk-heading-m">Open space</h3>
+
+        <h4 class="govuk-heading-s">Measurement and benchmarking</h4>
+        <p>
+          Hectares (ha) within LPA area of each typology, split between total amount
+          and space which is in public or private ownership.
+        </p>
+        <p>
+          Benchmarking guidance comes from Fields in Trust’s benchmark guidelines.
+        </p>
 
 
-      <h3 class="govuk-heading-m">
-        Data format
-      </h3>
-      <p class="govuk-body">
-        Data should be collected in a CSV file, which should include:
-      </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>a header row which must be the first row in the spreadsheet, written exactly as below (headers are case sensitive with no spacing)</li>
-        <li>1 row for each open space site</li>
-      </ul>
+        <h4 class="govuk-heading-s">Quality and definition</h4>
+        <p>[How should you measure quality? How should it be recorded?]</p>
+        <p>
+          When looking at open space, it is important to include quality of the
+          spaces so that it can provide a better understanding about the standards of provision.
+        </p>
 
-      <p>
-        We've created an <a href="/public/downloads/open-spaces.csv">open spaces data CSV template</a>.
-        If it helps, you can use this example file and enter your own data,
-        following the guidelines below.
-      </p>
+        {% from "govuk/components/table/macro.njk" import govukTable %}
 
-      <h4 class="govuk-heading-s">
-        Column headers:
-      </h4>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        OrganisationURI
-      </h5>
-      <p>
-        <a href="https://digital-land.github.io/organisation/" target="_blank">Find your organisation in this list</a> and enter the corresponding Open Data Communities URI.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Typology
-      </h5>
-      <p>
-        Enter the type of open space that the site belongs to.
-      </p>
-      <p>This should be one of the following:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Parks and gardens</li>
-        <li>Natural/Seminatural</li>
-        <li>Outdoor sports facilities</li>
-        <li>Amenity</li>
-        <li>Children and young people</li>
-        <li>Allotments, gardens and farms</li>
-        <li>Churchyards and cemeteries</li>
-        <li>Civic spaces</li>
-      </ul>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Reference
-      </h5>
-      <p>
-        Enter the unique reference your organisation uses to identify the open space.
-      </p>
-
-      <p>
-        If one doesn’t exist, you need to create one. It should not be used by your organisation to identify any other sites, but can be borrowed from another data set listing the site.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Name
-      </h5>
-      <p>
-        Enter the name your organisation uses for the site.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        GeoY
-      </h5>
-      <p>
-      Enter the latitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate systems specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        GeoX
-      </h5>
-      <p>
-      Enter the longitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate system specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
-      </p>
-
-      <div class="govuk-inset-text">
-        Be sure you do not mix up the latitude (Geo Y) and longitude (Geo X) values. Any location in the UK will have a latitude (Geo Y) from about 49 to 57 and a longitude (Geo X) from about -7 to 2.
-      </div>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Hectares
-      </h5>
-      <p>
-        Enter the land area of the site in hectares, up to 2 decimal places. Use digits (2) rather than words (two).
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        OwnershipStatus
-      </h5>
-      <p>
-        Indicate the site’s ownership by entering one of the following values:
-      </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>owned by a public authority</li>
-        <li>not owned by a public authority</li>
-        <li>mixed ownership</li>
-      </ul>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        FirstAddedDate
-      </h5>
-      <p>
-        Enter the date that the site was first added to this register, in the format YYYY-MM-DD.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        LastUpdatedDate
-      </h5>
-      <p>
-        Enter the date this entry in the register was updated, in the format YYYY-MM-DD.
-      </p>
-
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        EndDate
-      </h5>
-      <p>
-        If the site no longer needs to be listed (for example, if the site has
-        been built on), it should remain on the register for historical reasons
-        and not be deleted. Enter the date the site was developed or determined
-        to no longer be an open space, in the format YYYY-MM-DD. This field should
-        only be filled in once the site is no longer classified as open space.
-      </p>
-
-
-      <h2 class="govuk-heading-l">Current population and supply</h2>
-
-      <h3 class="govuk-heading-m">Population</h3>
-      <p>
-        Current population figures, using the ONS population figures for the planning authorities boundary should be used as a baseline. Population should be segmented by age demographics to allow for analysis of availability of more age-specific facilities such as children’s playgrounds.
-      </p>
-
-      <h3 class="govuk-heading-m">Open space</h3>
-
-      <h4 class="govuk-heading-s">Measurement and benchmarking</h4>
-      <p>
-        Hectares (ha) within LPA area of each typology, split between total amount
-        and space which is in public or private ownership.
-      </p>
-      <p>
-        Benchmarking guidance comes from Fields in Trust’s benchmark guidelines.
-      </p>
-
-
-      <h4 class="govuk-heading-s">Quality and definition</h4>
-      <p>[How should you measure quality? How should it be recorded?]</p>
-      <p>
-        When looking at open space, it is important to include quality of the
-        spaces so that it can provide a better understanding about the standards of provision.
-      </p>
-
-      {% from "govuk/components/table/macro.njk" import govukTable %}
-
-      {{ govukTable({
-        firstCellIsHeader: true,
-        head: [
-          {
-            text: "Typology"
-          },
-          {
-            text: "Definition"
-          },
-          {
-            text: "Benchmark"
-          },
-          {
-            text: "Potential data sources"
-          }
-        ],
-        rows: [
-          [
+        {{ govukTable({
+          firstCellIsHeader: true,
+          head: [
             {
-              text: "Parks and gardens"
+              text: "Typology"
             },
             {
-              text: "Accessible, high quality opportunities for informal recreation and community events"
+              text: "Definition"
             },
             {
-              text: "0.8"
+              text: "Benchmark"
             },
             {
-              text: ""
+              text: "Potential data sources"
             }
           ],
-          [
-            {
-              text: "Natural and semi-natural green spaces"
-            },
-            {
-              text: "Wildlife conservation, biodiversity and environmental education and awareness"
-            },
-            {
-              text: "1.8"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Outdoor sports facilities"
-            },
-            {
-              text: "Participation in outdoor sports, such as pitch sports, tennis, bowls, athletics or countryside and water sports."
-            },
-            {
-              text: "1.2"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Amenity green spaces"
-            },
-            {
-              text: "Opportunities for informal activities close to home or work or enhancement of the appearance of residential or other areas."
-            },
-            {
-              text: "0.6"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Provision for children and young people"
-            },
-            {
-              text: "Areas designed primarily for play and social interaction involving children and young people, such as equipped play areas, ball courts, skateboard areas and teenage shelters"
-            },
-            {
-              text: "0.25"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Allotments, community gardens and urban farms"
-            },
-            {
-              text: "Opportunities for those people who wish to do so to grow their own produce as part of the long term promotion of sustainability, health and social inclusion."
-            },
-            {
-              text: "n.a"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Churchyards and cemetries"
-            },
-            {
-              text: "Quiet contemplation and burial of the dead, often linked to the promotion of wildlife conservation and biodiversity"
-            },
-            {
-              text: "n.a"
-            },
-            {
-              text: ""
-            }
-          ],
-          [
-            {
-              text: "Civic spaces"
-            },
-            {
-              text: "Providing a setting for civic buildings, public demonstrations and community events."
-            },
-            {
-              text: "n.a"
-            },
-            {
-              text: ""
-            }
+          rows: [
+            [
+              {
+                text: "Parks and gardens"
+              },
+              {
+                text: "Accessible, high quality opportunities for informal recreation and community events"
+              },
+              {
+                text: "0.8"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Natural and semi-natural green spaces"
+              },
+              {
+                text: "Wildlife conservation, biodiversity and environmental education and awareness"
+              },
+              {
+                text: "1.8"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Outdoor sports facilities"
+              },
+              {
+                text: "Participation in outdoor sports, such as pitch sports, tennis, bowls, athletics or countryside and water sports."
+              },
+              {
+                text: "1.2"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Amenity green spaces"
+              },
+              {
+                text: "Opportunities for informal activities close to home or work or enhancement of the appearance of residential or other areas."
+              },
+              {
+                text: "0.6"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Provision for children and young people"
+              },
+              {
+                text: "Areas designed primarily for play and social interaction involving children and young people, such as equipped play areas, ball courts, skateboard areas and teenage shelters"
+              },
+              {
+                text: "0.25"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Allotments, community gardens and urban farms"
+              },
+              {
+                text: "Opportunities for those people who wish to do so to grow their own produce as part of the long term promotion of sustainability, health and social inclusion."
+              },
+              {
+                text: "n.a"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Churchyards and cemetries"
+              },
+              {
+                text: "Quiet contemplation and burial of the dead, often linked to the promotion of wildlife conservation and biodiversity"
+              },
+              {
+                text: "n.a"
+              },
+              {
+                text: ""
+              }
+            ],
+            [
+              {
+                text: "Civic spaces"
+              },
+              {
+                text: "Providing a setting for civic buildings, public demonstrations and community events."
+              },
+              {
+                text: "n.a"
+              },
+              {
+                text: ""
+              }
+            ]
           ]
-        ]
-      }) }}
+        }) }}
+      </section>
 
-      <h2 class="govuk-heading-l">Future supply and demand</h2>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h3 class="govuk-heading-m">Future supply</h3>
-      <p>
-        New developments that have been granted planning permission and include new open space, should be calculated using the above typologies for the next 5 and 10 years.
-      </p>
+      <section id="future-supply-and-demand">
+        <h2 class="govuk-heading-l">Future supply and demand</h2>
 
-      <h3 class="govuk-heading-m">Future demand</h3>
-      <p>
-        Population projections for the next 5 and 10 years should be used to calculate future demand.
-      </p>
+        <h3 class="govuk-heading-m">Future supply</h3>
+        <p>
+          New developments that have been granted planning permission and include new open space, should be calculated using the above typologies for the next 5 and 10 years.
+        </p>
 
-      <h3 class="govuk-heading-m">Deficit/surplus</h3>
-      <p>
-        Where benchmarks exist authorities should analyse the amount of open space available per 1,000 of population, using the following calculation. [Which calculation?]
-      </p>
+        <h3 class="govuk-heading-m">Future demand</h3>
+        <p>
+          Population projections for the next 5 and 10 years should be used to calculate future demand.
+        </p>
 
-      <p>Outputs should be provided using the schema below:</p>
+        <h3 class="govuk-heading-m">Deficit/surplus</h3>
+        <p>
+          Where benchmarks exist authorities should analyse the amount of open space available per 1,000 of population, using the following calculation. [Which calculation?]
+        </p>
 
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Typology
-      </h5>
-      <p>
-        Enter the type of open space that the site belongs to. See the list above
-        for the accepted typologies.
-      </p>
+        <p>Outputs should be provided using the schema below:</p>
 
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        TotalPopulation
-      </h5>
-      <p>
-        [Explanation needed]
-      </p>
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          Typology
+        </h5>
+        <p>
+          Enter the type of open space that the site belongs to. See the list above
+          for the accepted typologies.
+        </p>
 
-      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
-        HectaresPer1000People
-      </h5>
-      <p>
-        [Explanation needed]
-      </p>
-      <p>
-        You are also encouraged to analyse the accessibility of different open spaces by using travel time (ideally walking or absolute distance) but no metrics exist.  The shape files collected for individual parcels of open space should assist with this.
-      </p>
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          TotalPopulation
+        </h5>
+        <p>
+          [Explanation needed]
+        </p>
+
+        <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+          HectaresPer1000People
+        </h5>
+        <p>
+          [Explanation needed]
+        </p>
+        <p>
+          You are also encouraged to analyse the accessibility of different open spaces by using travel time (ideally walking or absolute distance) but no metrics exist.  The shape files collected for individual parcels of open space should assist with this.
+        </p>
+      <section>
 
     </div>
   </div>

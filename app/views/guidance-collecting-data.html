@@ -236,8 +236,139 @@
         spaces so that it can provide a better understanding about the standards of provision.
       </p>
 
+      {% from "govuk/components/table/macro.njk" import govukTable %}
 
-
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Typology"
+          },
+          {
+            text: "Definition"
+          },
+          {
+            text: "Benchmark"
+          },
+          {
+            text: "Potential data sources"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Parks and gardens"
+            },
+            {
+              text: "Accessible, high quality opportunities for informal recreation and community events"
+            },
+            {
+              text: "0.8"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Natural and semi-natural green spaces"
+            },
+            {
+              text: "Wildlife conservation, biodiversity and environmental education and awareness"
+            },
+            {
+              text: "1.8"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Outdoor sports facilities"
+            },
+            {
+              text: "Participation in outdoor sports, such as pitch sports, tennis, bowls, athletics or countryside and water sports."
+            },
+            {
+              text: "1.2"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Amenity green spaces"
+            },
+            {
+              text: "Opportunities for informal activities close to home or work or enhancement of the appearance of residential or other areas."
+            },
+            {
+              text: "0.6"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Provision for children and young people"
+            },
+            {
+              text: "Areas designed primarily for play and social interaction involving children and young people, such as equipped play areas, ball courts, skateboard areas and teenage shelters"
+            },
+            {
+              text: "0.25"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Allotments, community gardens and urban farms"
+            },
+            {
+              text: "Opportunities for those people who wish to do so to grow their own produce as part of the long term promotion of sustainability, health and social inclusion."
+            },
+            {
+              text: "n.a"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Churchyards and cemetries"
+            },
+            {
+              text: "Quiet contemplation and burial of the dead, often linked to the promotion of wildlife conservation and biodiversity"
+            },
+            {
+              text: "n.a"
+            },
+            {
+              text: ""
+            }
+          ],
+          [
+            {
+              text: "Civic spaces"
+            },
+            {
+              text: "Providing a setting for civic buildings, public demonstrations and community events."
+            },
+            {
+              text: "n.a"
+            },
+            {
+              text: ""
+            }
+          ]
+        ]
+      }) }}
 
       <h2 class="govuk-heading-l">Future supply and demand</h2>
 
@@ -266,6 +397,19 @@
         for the accepted typologies.
       </p>
 
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+        TotalPopulation
+      </h5>
+      <p>
+        [Explanation needed]
+      </p>
+
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+        HectaresPer1000People
+      </h5>
+      <p>
+        [Explanation needed]
+      </p>
       <p>
         You are also encouraged to analyse the accessibility of different open spaces by using travel time (ideally walking or absolute distance) but no metrics exist.  The shape files collected for individual parcels of open space should assist with this.
       </p>

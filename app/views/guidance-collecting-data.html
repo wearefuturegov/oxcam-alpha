@@ -60,7 +60,64 @@
         Similarly we are seeking to collect data consistently, so are requiring core evidence base data to be collected to have:
       </p>
 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>consistent format</li>
+        <li>consistent metadata: metadata summarises basic information about data, making finding and working with data easier  </li>
+        <li>typologies: how different factors can be classified, from types of employment land, sports facilities, utilities assets etc</li>
+        <li>associated definitions to explain the typology</li>
+        <li>benchmarks, in some instances can be specified: these are not targets but often averages against which local divergences can be explained and used to guide policy.</li>
+      </ul>
+
       <h2 class="govuk-heading-m">How data should be collected</h2>
+
+      <p>[What data should be collected?]</p>
+
+      <h3 class="govuk-heading-s">
+        Metadata
+      </h3>
+
+      <p>[How should metadata be collected while there is no repo yet?]</p>
+
+      <p class="govuk-body">
+        Metadata is information about the data that helps others to better understand the data. Metadata you should provide about your open space data:
+      </p>
+
+
+      <h3 class="govuk-heading-s">
+        Data format
+      </h3>
+      <p class="govuk-body">
+        Data should be collected in a CSV file, which should include:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a header row which must be the first row in the spreadsheet, written exactly as below (headers are case sensitive with no spacing)</li>
+        <li>1 row for each open space site</li>
+      </ul>
+
+      <h4 class="govuk-heading-s">
+        Column headers:
+      </h4>
+
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+        OrganisationURI
+      </h5>
+      <p>
+        <a href="https://digital-land.github.io/organisation/" target="_blank">Find your organisation in this list</a> and enter the corresponding Open Data Communities URI.
+      </p>
+
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+        GeoY
+      </h5>
+      <p>
+      Enter the latitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate systems specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
+      </p>
+
+      <h5 class="govuk-heading-s govuk-!-margin-bottom-1">
+        GeoX
+      </h5>
+      <p>
+      Enter the longitude of a point close to the centre of the site. The value should be 6 or fewer decimal places, using the WGS84 or ETRS89 coordinate system specified by the <a href="https://www.gov.uk/government/publications/open-standards-for-government/exchange-of-location-point" target="_blank">open standards for government guidance</a>.
+      </p>
 
       <h2 class="govuk-heading-m">Current population and supply</h2>
 

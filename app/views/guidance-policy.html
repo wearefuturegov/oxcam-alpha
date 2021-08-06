@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Evidence base study guidance
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Evidence base guidance",
+        href: "#"
+      },
+      {
+        text: "Infrastructure",
+        href: "#"
+      },
+      {
+        text: "Open Space",
+        href: "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h1 class="govuk-heading-l">Open Space</h1>
+
+      <ul class="govuk-list">
+        <span class="govuk-caption-m govuk-!-margin-bottom-2">Sections</span>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-introduction">Introduction</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-policy">Consider guidance and policy</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-collecting-data">Data to collect</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-publishing">Publishing data</a>
+        </li>
+      </ul>
+      </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Consider guidance and policy</h1>
+
+      <h2 class="govuk-heading-m">National Planning Policy Framework</h2>
+      <p class="govuk-body">
+        Key paragraphs of the NPPF:
+      </p>
+      <p class="govuk-body">
+        98. Access to a network of high quality open spaces and opportunities for sport and physical activity is important for the health and well-being of communities, and can deliver wider benefits for nature and support efforts to address climate change. Planning policies should be based on robust and up-to-date assessments of the need for open space, sport and recreation facilities (including quantitative or qualitative deficits or surpluses) and opportunities for new provision. Information gained from the assessments should be used to determine what open space, sport and recreational provision is needed, which plans should then seek to accommodate.
+      </p>
+      <p class="govuk-body">
+        99. Existing open space, sports and recreational buildings and land, including playing fields, should not be built on unless:
+      </p>
+
+      <h2 class="govuk-heading-m">Relevant Planning Practice Guidance</h2>
+      <p class="govuk-body">
+      </p>
+
+      <h2 class="govuk-heading-m">Local context</h2>
+      <p class="govuk-body">
+        Local Authorities should have regard to any strategic plans or supplementary planning guidance that may exist from a county or combined/mayoral authority.
+      </p>
+
+      <h2 class="govuk-heading-m">Sector policy</h2>
+      <p class="govuk-body">
+        Local planning authorities are required by the The Town and Country Planning legislation to consult Sport England in certain cases where development affects the use of land as playing fields. Sport England has produced its own guidance on assessing needs for playing pitches.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

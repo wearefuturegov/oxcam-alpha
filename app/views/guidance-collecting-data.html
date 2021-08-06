@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Evidence base study guidance
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Evidence base guidance",
+        href: "#"
+      },
+      {
+        text: "Infrastructure",
+        href: "#"
+      },
+      {
+        text: "Open Space",
+        href: "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h1 class="govuk-heading-l">Open Space</h1>
+
+      <ul class="govuk-list">
+        <span class="govuk-caption-m govuk-!-margin-bottom-2">Sections</span>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-introduction">Introduction</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-policy">Consider guidance and policy</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-collecting-data">Data to collect</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-underline" href="./guidance-publishing">Publishing data</a>
+        </li>
+      </ul>
+      </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Guidance</span>
+      <h1 class="govuk-heading-xl">Data to collect</h1>
+
+      <p class="govuk-body">
+        All evidence base studies require some elements of data and standardised information to be collected. Whilst this will vary from study to study, there are some consistent elements that apply to most elements of a place under study; current population and supply, future supply and future demand, with some analysis required to understand future surplus/deficits.
+      </p>
+
+      <p class="govuk-body">
+        Similarly we are seeking to collect data consistently, so are requiring core evidence base data to be collected to have:
+      </p>
+
+      <h2 class="govuk-heading-m">How data should be collected</h2>
+
+      <h2 class="govuk-heading-m">Current population and supply</h2>
+
+      <h2 class="govuk-heading-m">Future supply and demand</h2>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add your data
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="data-files" method="post">
+
+        <h1 class="govuk-heading-l">
+          License of data
+        </h1>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-license">
+              License (optional)
+            </label>
+          </h2>
+          <div id="data-license-hint" class="govuk-hint">
+            Select the license that is needed to access your dataset.
+          </div>
+          <select class="govuk-select" id="data-license" name="dataLicense">
+            <option value="">Select license type</option>
+            <option value="licence 1">Licence 1</option>
+            <option value="licence 2">Licence 2</option>
+            <option value="licence 3">Licence 3</option>
+            <option value="licence 4">Licence 4</option>
+          </select>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

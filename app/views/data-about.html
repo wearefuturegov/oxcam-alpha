@@ -16,16 +16,26 @@
       <form class="form" action="data-files" method="post">
 
         <h1 class="govuk-heading-l">
-         About your data
+         About your dataset
         </h1>
 
         <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-title">
+              Title of your dataset
+            </label>
+          </h2>
+          <div id="data-title-hint" class="govuk-hint">
+            Give your dataset a clear, short title that describes what it is, for example, Open space across Huntingdonshire.
+          </div>
+          <input class="govuk-input" id="data-title" name="dataTitle" aria-describedby="more-detail-hint">
+        </div>
+        <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-description">
-              Summary (optional)
+              Description of your dataset
             </label>
           </h2>
           <div id="data-description-hint" class="govuk-hint">
-            Explain what it covers, how it can be used and any other important information that a person using your dataset might find helpful.
+            Give a brief descripton about the dataset. Explain what it covers, how it can be used and any other useful information that people would want to know about it. 
           </div>
           <textarea class="govuk-textarea" id="data-description" name="dataDescription" rows="4" aria-describedby="more-detail-hint"></textarea>
         </div>
@@ -47,35 +57,6 @@
             </label>
           </h2>
           <input class="govuk-input" id="data-original-source" name="dataOriginalSource" type="text">
-        </div>
-
-        <div class="govuk-form-group">
-          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-licence">
-              Licence (optional)
-            </label>
-          </h2>
-          <div id="data-licence-hint" class="govuk-hint">
-            Select the license that is needed to access your dataset.
-          </div>
-          <select class="govuk-select" id="data-licence" name="dataLicence">
-            <option value="licence 1">Licence 1</option>
-            <option value="licence 2">Licence 2</option>
-            <option value="licence 3">Licence 3</option>
-            <option value="licence 4">Licence 4</option>
-          </select>
-        </div>
-
-        <div class="govuk-form-group">
-          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-access">
-              Who will be able to access your data?
-            </label>
-          </h2>
-          <select class="govuk-select" id="data-access" name="dataAccess">
-            <option value="user 1">User 1</option>
-            <option value="user 2">User 2</option>
-            <option value="user 3">User 3</option>
-            <option value="user 4">User 4</option>
-          </select>
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

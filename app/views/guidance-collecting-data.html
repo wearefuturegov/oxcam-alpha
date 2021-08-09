@@ -48,7 +48,7 @@
             </li>
             <li>
               <span>—</span>
-              <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#current-population-and-supply">Current population and supply</a>
+              <a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#current-supply-and-demand">Current supply and demand</a>
             </li>
             <li>
               <span>—</span>
@@ -225,13 +225,19 @@
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <section id="current-population-and-supply">
+      <section id="current-supply-and-demand">
 
-        <h2 class="govuk-heading-l">Current population and supply</h2>
+        <h2 class="govuk-heading-l">Current supply and demand</h2>
 
         <h3 class="govuk-heading-m">Population</h3>
         <p>
-          Current population figures, using the ONS population figures for the planning authorities boundary should be used as a baseline. Population should be segmented by age demographics to allow for analysis of availability of more age-specific facilities such as children’s playgrounds.
+          You should use current population figures as a baseline. These can be
+          obtained from the ONS population figures for the planning authority's
+          boundary.
+        </p>
+        <p>
+          To analyse the availability of more age-specific facilities, such as
+          children’s playgrounds, you should take demographics into consideration.
         </p>
 
         <h3 class="govuk-heading-m">Open space</h3>
@@ -243,14 +249,6 @@
         </p>
         <p>
           Benchmarking guidance comes from Fields in Trust’s benchmark guidelines.
-        </p>
-
-
-        <h4 class="govuk-heading-s">Quality and definition</h4>
-        <p>[How should you measure quality? How should it be recorded?]</p>
-        <p>
-          When looking at open space, it is important to include quality of the
-          spaces so that it can provide a better understanding about the standards of provision.
         </p>
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
@@ -265,7 +263,7 @@
               text: "Definition"
             },
             {
-              text: "Benchmark"
+            html: "Benchmark <div class='govuk-body govuk-!-font-size-16'>(hectares per 1,000 people)</div>"
             },
             {
               text: "Potential data sources"
@@ -283,7 +281,7 @@
                 text: "0.8"
               },
               {
-                text: ""
+                html: "<a href='#'>Ordnance Survey Open greenspace</a>"
               }
             ],
             [
@@ -297,7 +295,7 @@
                 text: "1.8"
               },
               {
-                text: ""
+                html: "<a href='#'>Ordnance Survey Open greenspace</a>"
               }
             ],
             [
@@ -311,7 +309,7 @@
                 text: "1.2"
               },
               {
-                text: ""
+                html: "<a href='#'>Sport England Open Data</a>"
               }
             ],
             [
@@ -386,6 +384,15 @@
             ]
           ]
         }) }}
+
+        <h4 class="govuk-heading-s">Quality and definition</h4>
+        <p>[How should you measure quality? How should it be recorded?]</p>
+        <p>
+          When looking at open space, it is important to include quality of the
+          spaces so that it can provide a better understanding about the standards of provision.
+        </p>
+
+
       </section>
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -405,7 +412,10 @@
 
         <h3 class="govuk-heading-m">Deficit/surplus</h3>
         <p>
-          Where benchmarks exist authorities should analyse the amount of open space available per 1,000 of population, using the following calculation. [Which calculation?]
+          Where benchmarks exist authorities should analyse the amount of open space available per 1,000 of population, using the following calculation:
+        </p>
+        <p style="font-style: italic; text-align: center;">
+          (total hectares of open space / total population) x 1000
         </p>
 
         <p>Outputs should be provided using the schema below:</p>

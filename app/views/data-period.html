@@ -20,12 +20,8 @@
       <form class="form" action="data-license" method="post">
 
         <h1 class="govuk-heading-l">
-          Time period and update of the data
-        </h1>
-
-        <h2 class="govuk-heading-m">
           What time period was the data collected?
-        </h2>
+        </h1>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="data-period-start-date-hint">
@@ -35,7 +31,7 @@
               </h3>
             </legend>
             <div id="data-period-start-date-hint" class="govuk-hint">
-                For example, 19 3 1980
+                For example, 19 01 2011.
               </div>
             <div class="govuk-date-input" id="data-period-start-date">
               <div class="govuk-date-input" id="data-period-end-date">
@@ -73,7 +69,7 @@
               </h3>
             </legend>
             <div id="data-period-end-date-hint" class="govuk-hint">
-                Leave this blank if the dataset is still being updated
+                Leave this blank if your dataset was collected only on a specific day.
               </div>
             <div class="govuk-date-input" id="data-period-end-date">
               <div class="govuk-date-input" id="data-period-end-date">
@@ -98,63 +94,6 @@
                   </label>
                   <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="data-period-end-date-year" name="dataPeriodEndYear" type="text" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
-            </div>
-
-          </fieldset>
-        </div>
-
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                How often is the dataset updated?
-              </h2>
-            </legend>
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency" name="dataUpdateFrequency" type="radio" value="live">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency">
-                  Live
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-2" name="dataUpdateFrequency" type="radio" value="daily">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-2">
-                  Daily
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-3" name="dataUpdateFrequency" type="radio" value="weekly">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-3">
-                  Weekly
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-4" name="dataUpdateFrequency" type="radio" value="monthly">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-4">
-                  Monthly
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-5" name="dataUpdateFrequency" type="radio" value="quarterly">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-5">
-                  Quarterly
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-6" name="dataUpdateFrequency" type="radio" value="yearly">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-6">
-                  Yearly
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="data-update-frequency-7" name="dataUpdateFrequency" type="radio" value="the dataset will not be regularly updated">
-                <label class="govuk-label govuk-radios__label" for="data-update-frequency-7">
-                  The dataset will not be regularly updated
-                </label>
-              </div>
-
             </div>
 
           </fieldset>

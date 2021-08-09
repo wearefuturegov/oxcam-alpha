@@ -1,2 +1,2 @@
-OrganisationURI,Typology,Reference,Name,GeoY,GeoX,Hectares,OwnershipStatus,FirstAddedDate,LastUpdateDate,EndDate
-,,,,,,,,,,
+OrganisationURI,Typology,Reference,Name,GeoY,GeoX,Hectares,Geometry,OwnershipStatus,FirstAddedDate,LastUpdateDate,EndDate
+,,,,,,,,,,,

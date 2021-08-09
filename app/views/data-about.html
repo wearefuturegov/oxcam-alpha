@@ -35,6 +35,73 @@
         </div>
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set evidenceStudyReveal %}
+          {{ govukInput({
+            id: "evidenceStudyTitle",
+            name: "evidenceStudyTitle",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Title of evidence base"
+            }
+          }) }}
+          {{ govukInput({
+            id: "evidenceStudyLink",
+            name: "evidenceStudyLink",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Link to evidence base document (optional)"
+            },
+            hint: {
+              text: "If the evidence base is available online, please provide a link to it"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set strategicWorkReveal %}
+          {{ govukInput({
+            id: "strategicWorkTitle",
+            name: "strategicWorkTitle",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Title of strategic work"
+            }
+          }) }}
+          {{ govukInput({
+            id: "strategicWorkLink",
+            name: "strategicWorkLink",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Link to strategic work document (optional)"
+            },
+            hint: {
+              text: "If the strategic work is available online, please provide a link to it"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set otherReveal %}
+          {{ govukInput({
+            id: "otherTitle",
+            name: "otherTitle",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "What was it for?"
+            }
+          }) }}
+          {{ govukInput({
+            id: "otherLink",
+            name: "otherLink",
+            classes: "govuk-!-width-full",
+            label: {
+              text: "Link to it (optional)"
+            },
+            hint: {
+              text: "If there is available online, please provide a link to it"
+            }
+          }) }}
+        {% endset -%}
 
         {{ govukRadios({
           idPrefix: "data-commissioning-reason",
@@ -49,15 +116,24 @@
           items: [
             {
               value: "evidence-base-study",
-              text: "For an evidence base study"
+              text: "For an evidence base study",
+              conditional: {
+                html: evidenceStudyReveal
+              }
             },
             {
               value: "strategic-work",
-              text: "Part of strategic work"
+              text: "Part of strategic work",
+              conditional: {
+                html: strategicWorkReveal
+              }
             },
             {
               value: "other",
-              text: "Other"
+              text: "Other",
+              conditional: {
+                html: otherReveal
+              }
             }
           ]
         }) }}
@@ -68,7 +144,7 @@
             </label>
           </h2>
           <div id="data-description-hint" class="govuk-hint">
-            Give a brief descripton about the dataset. Explain what it covers, how it can be used and any other useful information that people would want to know about it. 
+            Give a brief descripton about the dataset. Explain what it covers, how it can be used and any other useful information that people would want to know about it.
           </div>
           <textarea class="govuk-textarea" id="data-description" name="dataDescription" rows="6" aria-describedby="more-detail-hint"></textarea>
         </div>

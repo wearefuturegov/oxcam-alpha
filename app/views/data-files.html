@@ -20,8 +20,30 @@
       <form class="form" action="data-contact" method="post">
 
         <h1 class="govuk-heading-l">
-         Upload data files
+         Add data files
         </h1>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="file-name">
+              Name of the file
+            </label>
+          </h2>
+          <div id="file-name-hint" class="govuk-hint">
+            Give your data file a name that clearly describes what it is. For example, a file of data for parks and gardens can be named ‘Parks and gardens’.
+          </div>
+          <input class="govuk-input" id="file-name" name="fileName" type="text" aria-describedby="file-name-hint">
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="file-description">
+              Description of the file
+            </label>
+          </h2>
+          <div id="file-description-hint" class="govuk-hint">
+            Give a brief descripton about the data file that helps to explain what it contains. For example, a open space file about parks and gardens might have a description to what the definition of parks and gardens are.
+          </div>
+          <input class="govuk-input" id="file-description" name="fileDescription" type="text" aria-describedby="file-description-hint">
+        </div>
 
         <div class="govuk-form-group">
           <input type="hidden" id="data-url" name="data-url">
@@ -30,6 +52,10 @@
           </label>
           <input class="govuk-file-upload" id="file-upload" name="fileUpload" type="file">
         </div>
+
+        <a href="#">Upload another format</a>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Add another file</button>
 <br>

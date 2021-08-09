@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add your data
+  Upload data
+{% endblock %}
+
+{% block header %}
+  {% include "includes/upload-data-header.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/">Back</a>
+  <a class="govuk-back-link" href="/data-upload">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="data-files" method="post">
+      <form class="form" action="data-category" method="post">
 
         <h1 class="govuk-heading-l">
          About your dataset
@@ -29,6 +33,35 @@
           </div>
           <input class="govuk-input" id="data-title" name="dataTitle" aria-describedby="more-detail-hint">
         </div>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "data-commissioning-reason",
+          name: "data-commissioning-reason",
+          fieldset: {
+            legend: {
+              text: "What was the data created for?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "evidence-base-study",
+              text: "For an evidence base study"
+            },
+            {
+              value: "strategic-work",
+              text: "Part of strategic work"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-description">
               Description of your dataset
@@ -37,26 +70,7 @@
           <div id="data-description-hint" class="govuk-hint">
             Give a brief descripton about the dataset. Explain what it covers, how it can be used and any other useful information that people would want to know about it. 
           </div>
-          <textarea class="govuk-textarea" id="data-description" name="dataDescription" rows="4" aria-describedby="more-detail-hint"></textarea>
-        </div>
-
-        <div class="govuk-form-group">
-          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-commissioning-reason">
-              Reason for commissioning data (optional)
-            </label>
-          </h2>
-          <div id="data-commissioning-reason-hint" class="govuk-hint">
-            Why was the data created? Was it for an evidence base study, local plan, strategy or something else?
-          </div>
-          <textarea class="govuk-textarea" id="data-commissioning-reason" name="dataCommissioningReason" rows="2" aria-describedby="more-detail-hint"></textarea>
-        </div>
-
-        <div class="govuk-form-group">
-          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="data-original-source">
-              URL to original source
-            </label>
-          </h2>
-          <input class="govuk-input" id="data-original-source" name="dataOriginalSource" type="text">
+          <textarea class="govuk-textarea" id="data-description" name="dataDescription" rows="6" aria-describedby="more-detail-hint"></textarea>
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

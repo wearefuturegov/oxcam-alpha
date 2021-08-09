@@ -21,36 +21,68 @@ module.exports = {
 
   'data-categories': [
     {
-      value: 'physicalInfrastructure',
-      text: 'Physical infrastructure'
+      value: 'housing',
+      text: 'Housing'
     },
     {
-      value: 'socialInfrastructure',
-      text: 'Social infrastructure'
+      value: 'economyEmployment',
+      text: 'Economy and employment'
+    },
+    {
+      value: 'retail',
+      text: 'Retail'
     },
     {
       value: 'demographics',
-      text: 'Demographcs'
+      text: 'Demographics'
     },
     {
-      value: 'utilities',
-      text: 'Utilities'
+      value: 'openSpace',
+      text: 'Open space'
     },
     {
-      value: 'floodRisk',
-      text: 'Flood risk'
+      value: 'sportRecreation',
+      text: 'Sport and recreation'
+    },
+    {
+      value: 'leisureCulture',
+      text: 'Leisure and culture'
+    },
+    {
+      value: 'heritage',
+      text: 'Heritage'
+    },
+    {
+      value: 'regeneration',
+      text: 'Regeneration'
+    },
+    {
+      value: 'environment',
+      text: 'Environment'
     },
     {
       value: 'sustainability',
-      text: 'Sustainability'
+      text: 'Sustainability and climate change'
+    },
+    {
+      value: 'water',
+      text: 'Water and flooding'
+    },
+    {
+      value: 'greenBelt',
+      text: 'Green belt'
     },
     {
       value: 'transportConnectivity',
       text: 'Transport and connectivity'
     },
     {
-      value: 'other',
-      text: 'Other'
+      value: 'health',
+      text: 'Health'
+    },
+    {
+      value: 'infrastructure',
+      text: 'Infrastructure'
     }
   ],
 

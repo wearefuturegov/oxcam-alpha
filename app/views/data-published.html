@@ -33,114 +33,102 @@
           </div>
         </div>
 
-{{ data | dump }}
-
         <h1 class="govuk-heading-l">
-          {{ data.dataTitle }}
+          {% if data.dataTitle %}{{ data.dataTitle }}{% else %}Data title unknown{% endif %}
         </h1>
 
-        <h2 class="govuk-heading-s">
-          Description
-        </h2>
+        {% if data.dataDescription %}
 
-        <p>
-          {% if data.dataDescription %}{{ data.dataDescription }}{% else %}No data entry found{% endif %}
-        </p>
+          <h2 class="govuk-heading-s">
+            Description
+          </h2>
 
-        <h2 class="govuk-heading-s">
-          How the data was created
-        </h2>
+          <p>
+            {{ data.dataDescription }}
+          </p>
 
-        <p>
-          {% if data.dataCommissioningReason %}{{ data.dataCommissioningReason }}{% else %}No data entry found{% endif %}
-        </p>
+        {% endif %}
 
         <dl class="govuk-summary-list govuk-summary-list--no-border">
+          {% if data.dataCategory %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Category:
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data.dataCategory %}
                 {% for value in data.dataCategory %}
                 <strong class="govuk-tag">
                   {{ value }}
                 </strong>
                 {% endfor %}
-              {% else %}No data entry found{% endif %}
             </dd>
           </div>
+          {% endif %}
+          {% if data.dataLocation %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Location coverage:
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data.dataLocation %}{{ data.dataLocation }}{% else %}No data entry found{% endif %}
+              {{ data.dataLocation }}
             </dd>
           </div>
+          {% endif %}
+          {% if data.dataPeriodStartDay %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Collection period:
             </dt>
             <dd class="govuk-summary-list__value">
-            {% if data.dataPeriodStartDay %}{{ data.dataPeriodStartDay }}/{{ data.dataPeriodStartMonth }}/{{ data.dataPeriodStartYear }}{% else %}No data entry found{% endif %}
+            {{ data.dataPeriodStartDay }}/{{ data.dataPeriodStartMonth }}/{{ data.dataPeriodStartYear }}
             </dd>
           </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Organisation:
             </dt>
             <dd class="govuk-summary-list__value">
-              [Where does the user log this?]
+              <a href="#">Generated from account information</a>
             </dd>
           </div>
+          {% if data.dataCommissioningReason %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Commisioned for:
             </dt>
             <dd class="govuk-summary-list__value">
-              [Where does the user log this?]
+              <a href="{{ data.evidenceStudyLink }}{{ data.strategicWorkLink }}{{ data.otherLink }}">{{ data.evidenceStudyTitle }}{{ data.strategicWorkTitle }}{{ data.otherTitle }}</a>
             </dd>
           </div>
+          {% endif %}
+          {% if data.dataLicense %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Licence:
+              License:
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data.dataLicence %}{{ data.dataLicence }}{% else %}No data entry found{% endif %}
+              {{ data.dataLicense }}
             </dd>
           </div>
+          {% endif %}
+          {% if data.dataPeriodEndDay %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Access:
+              Upload date:
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data.dataAccess %}{{ data.dataAccess }}{% else %}No data entry found{% endif %}
+              {{ data.dataPeriodEndDay }}/{{ data.dataPeriodEndMonth }}/{{ data.dataPeriodEndYear }}
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Owner:
-            </dt>
-            <dd class="govuk-summary-list__value">
-              [Where does the user log this?]
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date published:
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data.dataPeriodEndDay %}{{ data.dataPeriodEndDay }}/{{ data.dataPeriodEndMonth }}/{{ data.dataPeriodEndYear }}{% else %}No data entry found{% endif %}
-            </dd>
-          </div>
+          {% endif %}
         </dl>
 
     </div>
     <div class="govuk-grid-column-full">
 
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Data [dummy example table to probe design]</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">Data</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Dataset</th>
@@ -150,20 +138,14 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
+          {% for value in data.fileName %}
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">[Does this come from the filename uploaded?]</td>
-            <td class="govuk-table__cell">[Where does the individual descriptions come from?]</td>
-            <td class="govuk-table__cell">[Is this autogenerated by the system from when it's updated?]</td>
-            <td class="govuk-table__cell" colspan="3">[Are the links autogenerated by file type uploaded?]</td>
+            <td class="govuk-table__cell">{{ data.fileName }}</td>
+            <td class="govuk-table__cell">{{ data.fileDescription }}</td>
+            <td class="govuk-table__cell">[System generated]</td>
+            <td class="govuk-table__cell" colspan="3"><a href="#">{{ data.fileUpload }}</a></td>
           </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Parks and gardens</td>
-            <td class="govuk-table__cell">These are both private and public gardens and parks of small, medium and large sizes.</td>
-            <td class="govuk-table__cell">3/8/2021</td>
-            <td class="govuk-table__cell"><a href="#">CSV</a></td>
-            <td class="govuk-table__cell"><a href="#">Shape file</a></td>
-            <td class="govuk-table__cell"><a href="#">Geojson</a></td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
 

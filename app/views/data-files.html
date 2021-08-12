@@ -46,7 +46,7 @@
         </div>
 
         <div class="govuk-form-group">
-          <input type="hidden" id="data-url" name="data-url">
+          <input type="hidden" id="data-url" name="dataUrl">
           <label class="govuk-label" for="file-upload">
             Upload a file
           </label>
@@ -101,7 +101,7 @@
       xhr.onreadystatechange = () => {
         if(xhr.readyState === 4){
           if(xhr.status === 200){
-            document.getElementById('data-url').value = url;
+            document.getElementById('data-url').value = encodeURI(url);
           }
           else{
             alert('Could not upload file.');
